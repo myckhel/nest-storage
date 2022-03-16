@@ -43,7 +43,7 @@ export class S3Storage implements StorageDriver {
     fileContent: any,
     options?: FileOptions
   ): Promise<StorageDriver$PutFileResponse> {
-    const { mimeType } = options || {};
+    const { mimeType, ACL, ContentDisposition } = options || {};
     let params = {
       Bucket: this.config.bucket,
       Key: this.getPath(path),
@@ -51,6 +51,8 @@ export class S3Storage implements StorageDriver {
       ContentType: mimeType
         ? mimeType
         : getMimeFromExtension(this.getPath(path)),
+      ACL,
+      ContentDisposition,
     } as PutObjectRequest;
 
     await this.client.upload(params).promise();
