@@ -45,14 +45,14 @@ export interface StorageDriver {
    *
    * @param path
    */
-  url(path: string): string;
+  url(path: string): Promise<string> | string;
 
   /**
    * Get Signed Urls
    * @param path
    * @param expireInMinutes
    */
-  signedUrl(path: string, expireInMinutes: number): string;
+  signedUrl(path: string, expireInMinutes: number): Promise<string> | string;
 
   /**
    * Get object's metadata

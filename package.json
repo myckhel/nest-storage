@@ -1,6 +1,6 @@
 {
   "name": "@squareboat/nest-storage",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Multi disk multi driver storage manager for NestJS 💿💾",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,19 +31,22 @@
     "test:e2e:dev": "jest --config ./tests/jest-e2e.json --runInBand --watch"
   },
   "devDependencies": {
-    "@nestjs/common": "^9.3.9",
-    "@nestjs/core": "^9.3.9",
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "^18.14.6",
-    "reflect-metadata": "^0.1.13",
-    "typescript": "^4.9.5"
+    "@nestjs/common": "^11.0.10",
+    "@nestjs/core": "^11.0.10",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "aws-sdk": "^2.1390.0",
-    "fs-extra": "^11.1.1"
+    "@aws-sdk/client-s3": "^3.750.0",
+    "@aws-sdk/credential-providers": "^3.750.0",
+    "@aws-sdk/lib-storage": "^3.750.0",
+    "@aws-sdk/s3-request-presigner": "^3.750.0",
+    "@aws-sdk/types": "^3.734.0",
+    "fs-extra": "^11.3.0"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.7.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0",
-    "@nestjs/core": "^6.7.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0"
+    "reflect-metadata": "*",
+    "rxjs": "*"
   }
 }
