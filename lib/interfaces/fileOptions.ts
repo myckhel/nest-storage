@@ -1,6 +1,6 @@
-import { PutObjectRequest } from "aws-sdk/clients/s3";
+import { PutObjectCommandInput } from "@aws-sdk/client-s3";
 
 export interface FileOptions {
   mimeType?: string;
-  s3Meta?: PutObjectRequest;
+  s3Meta?: PutObjectCommandInput;
 }
